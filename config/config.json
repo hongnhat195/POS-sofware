@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "nhat195_SQLLogin_1",
+    "password": "Hongnhat195",
+    "database": "Pos-software",
+    "host": "Pos-software.mssql.somee.com",
+    "dialect": "mssql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

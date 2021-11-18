@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap");
+@font-face {
+  font-family: "Satisfy";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/satisfy/v11/rP2Hp2yn6lkG50LoCZOIHQ.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+body {
+  overflow: hidden; /* Hide scrollbars */
+}
+
+.pagebtn {
+  background-color: #d53401 !important;
+  border: 1px white solid !important;
+  color: white !important;
+}
+
+.text-title {
+  color: white;
+}
+
+.NavBar#NB1 {
+  background-color: #d53401;
+  position: fixed;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px;
+}
+.filterTab {
+  margin-top: 70px !important;
+  background-color: #fff;
+  height: 80px;
+  position: relative;
+  left: -18px;
+  max-width: 1135px !important;
+}
+.filterTab .MuiBox-root {
+  background-color: #d53401 !important;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  z-index: 1;
+}
+.filterTab .MuiBox-root .MuiButtonBase-root:hover {
+  background-color: rgb(228, 228, 228);
+}
+.filterTab .MuiBox-root .MuiTabScrollButton-root:hover,
+.filterTab .MuiBox-root .MuiTabScrollButton-root:active {
+  background-color: blanchedalmond;
+}
+.filterTab .MuiBox-root .MuiButtonBase-root {
+  color: #d53401 !important;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: #fff;
+}
+.filterTab .MuiBox-root .MuiButtonBase-root#food-filter {
+  width: 120px;
+  height: 110px;
+  border-radius: 10px;
+}
+.filterTab .css-1wlk0hk-MuiAvatar-root {
+  width: 65px;
+  height: 65px;
+}
+.filterTab .MuiBox-root {
+  background-color: aquamarine;
+}
+
+.menu-container {
+  position: relative;
+  top: 70px;
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.modal-container {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container .modal-content {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #d53401;
+  height: 130px;
+  border: none;
+  width: 350px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 0;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.modal-container .modal-content .modal-price {
+  color: #f47a00;
+  position: relative;
+  top: -30px;
+  padding: 0;
+}
+
+.modal-container .modal-content .modal-type {
+  font-family: "Satisfy", cursive;
+  color: black;
+  position: relative;
+  top: -10px;
+  font-weight: 700;
+}
+
+.modal-container .modal-img-container {
+  position: relative;
+  display: flex;
+  height: 150px;
+  width: 350px;
+  justify-content: center;
+  background-color: #d53401;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  padding: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.modal-container .modal-img-container img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  height: auto;
+  width: auto;
+  object-fit: cover;
+  margin: 0 auto;
+  transition: all 1s;
+}
+
+.modal-container .modal-detail {
+  position: relative;
+  top: -12px;
+  font-size: 18px;
+  background-color: #fff;
+  width: 350px;
+  height: auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.modal-container .modal-detail p {
+  position: relative;
+  left: 20px;
+  bottom: 15px;
+  font-size: 18px;
+}
+
+.modal-container .modal-detail .add-cart-btn {
+  position: relative;
+  width: 300px;
+  left: 25px;
+  bottom: 10px;
+  background-color: #d53401;
+  font-size: 20px;
+  border: rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+}
+
+.modal-container .modal-detail .add-cart-btn:hover {
+  background-color: #f47a00;
+}
+
+.modal-container .modal-detail .cart-item-btns-container {
+  position: relative;
+  bottom: 15px;
+  left: -80px;
+}
+
+.modal-container .modal-detail .cart-item-btns-container h5 {
+  color: #d53401;
+}
+
+.modal-container .modal-detail .cart-item-btn {
+  background-color: white;
+  color: black;
+  border: #d53401 1px solid;
+}
+
+.modal-container .modal-detail .cart-item-btn:hover {
+  background-color: #d53401;
+}
+
+.modal-container .modal-title {
+  height: 50px;
+  width: 350px;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.modal-container .modal-title .close-btn {
+  position: relative;
+  top: -40px;
+  left: 290px;
+  font-size: 20px;
+  border: none;
+}
+
+.modal-container .modal-title h3 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+/*===========*/

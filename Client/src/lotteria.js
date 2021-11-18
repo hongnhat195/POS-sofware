@@ -1,0 +1,47 @@
+//img = id
+export const foodArray = [
+    {ID:"1", name:"Fish Burger", type:["Burger","Seafood"], price:34000, src:"./img1/1.png"},
+    {ID:"2", name:"Burger Mozzarella", type:"Burger", price:60000, src:"./img1/2.jpg"},
+    {ID:"3", name:"Burger Double Double", type:"Burger", price:59000, src:"./img1/3.jpg"},
+    {ID:"4", name:"Shrimp Burger", type:["Burger","Seafood"], price:47000, src:"./img1/4.png"},
+    {ID:"5", name:"Burger Bulgogi", type:"Burger", price:44000, src:"./img1/5.png"},
+    {ID:"6", name:"Premium Chicken Burger", type:"Burger", price:44000, src:"./img1/6.png"},
+    {ID:"7", name:"Beef Egg Teriyaki Burger", type:"Burger", price:36000, src:"./img1/7.jpg"},
+    {ID:"8", name:"Squid Burger", type:["Burger","Seafood"], price:36000, src:"./img1/8.jpg"},
+    {ID:"9", name:"Burger Cheese", type:"Burger", price:34000, src:"./img1/9.png"},
+    {ID:"10", name:"Teriyaki Burger", type:"Burger", price:31000, src:"./img1/10.png"},
+
+    {ID:"11", name:"Fried Chicken", type:"Chicken", price:36000, src:"./img1/11.jpg"},
+    {ID:"12", name:"Cheese Chicken", type:"Chicken", price:38000, src:"./img1/12.jpg"},
+    {ID:"13", name:"Grilled Chicken", type:"Chicken", price:38000, src:"./img1/13.jpg"},
+    {ID:"14", name:"HS Chicken", type:"Chicken", price:38000, src:"./img1/14.jpg"},
+    {ID:"15", name:"Chicken Quater Leg", type:"Chicken", price:49000, src:"./img1/15.png"},
+
+    {ID:"16", name:"Grilled Chicken Quater Leg Rice", type:"Rice", price:58000, src:"./img1/16.png"},
+    {ID:"17", name:"Grilled Chicken Rice", type:"Rice", price:45000, src:"./img1/17.png"},
+    {ID:"18", name:"Soybean Chicken Rice", type:"Rice", price:45000, src:"./img1/18.png"},
+    {ID:"19", name:"Chicken Ball Rice", type:"Rice", price:45000, src:"./img1/19.png"},
+    {ID:"20", name:"Beef Rice", type:"Rice", price:45000, src:"./img1/20.png"},
+    {ID:"21", name:"Beef Cheese Rice", type:"Rice", price:45000, src:"./img1/21.jpg"},
+    {ID:"22", name:"Chicken Soup", type:"Rice", price:12000, src:"./img1/22.jpg"},
+
+    {ID:"23", name:"Apple Pie", type:"Desert", price:20000, src:"./img1/23.jpg"},
+    {ID:"24", name:"Tornado Yogurt Strawberry", type:"Desert", price:25000, src:"./img1/24.png"},
+    {ID:"25", name:"Tornado Chocolate", type:"Desert", price:25000, src:"./img1/25.png"},
+    {ID:"26", name:"Tornado Cashew", type:"Desert", price:25000, src:"./img1/26.png"},
+    {ID:"27", name:"Tornado Blueberry", type:"Desert", price:25000, src:"./img1/27.png"},
+    {ID:"28", name:"Squid Ring - 3 Pcs", type:["Desert","Seafood"], price:25000, src:"./img1/28.jpg"},
+    {ID:"29", name:"Sweet Potato - 3 Pcs", type:"Desert", price:25000, src:"./img1/29.png"},
+
+    {ID:"30", name:"Orange Juice", type:"Drinks", price:28000, src:"./img1/30.png"},
+    {ID:"31", name:"7 Up Cherry", type:"Drinks", price:25000, src:"./img1/31.jpg"},
+    {ID:"32", name:"7 Up Rose", type:"Drinks", price:25000, src:"./img1/32.jpg"},
+    {ID:"33", name:"Milo", type:"Drinks", price:25000, src:"./img1/33.png"},
+    {ID:"34", name:"7 UP (L)", type:"Drinks", price:18000, src:"./img1/34.jpg"},
+    {ID:"35", name:"Nestea", type:"Drinks", price:18000, src:"./img1/35.png"},
+    {ID:"36", name:"Pepsi (L)", type:"Drinks", price:18000, src:"./img1/36.jpg"},
+    {ID:"37", name:"Pepsi Zero Calories_Can", type:"Drinks", price:18000, src:"./img1/37.jpg"},
+    {ID:"38", name:"7 UP (M)", type:"Drinks", price:14000, src:"./img1/38.jpg"},
+    {ID:"39", name:"Mirinda (M)", type:"Drinks", price:14000, src:"./img1/39.jpg"},
+    {ID:"40", name:"Pepsi (M)", type:"Drinks", price:14000, src:"./img1/40.jpg"}
+];

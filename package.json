@@ -1,0 +1,29 @@
+{
+  "name": "POS-sofware",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "<hongnhat195>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon --exec babel-node server.js --ignore tests",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild": "npm run build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mssql": "^7.2.1",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "sequelize-cli": "^6.3.0"
+  }
+}
