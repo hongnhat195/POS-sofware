@@ -18,7 +18,7 @@ const Payment = () => {
                 </div>
                 <div className="row menu-row">
                     <div className="col-12 col-md-12 col-lg-12 payment-container">
-                        <h1 className="text-center" style={{ color: "red", fontFamily: "Roboto", fontWeight: 700 }}>Payment</h1>
+                        <h1 className="text-center" style={{ color: "red", fontFamily: "Roboto", fontWeight: 700, paddingTop: 20 }}>Payment</h1>
                         <div className="row">
                             <div className="col-12 col-md-12 col-lg-9">
                                 <Card />

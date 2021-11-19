@@ -9,6 +9,7 @@ import {
 import "../ProductStyle/ProductListStyle.css";
 import Cart from "../components/cart/cart";
 import TabFilter from "../components/title/tabFilter";
+import { Link } from "react-router-dom";
 
 const { useContext, useEffect } = React;
 
@@ -103,6 +104,9 @@ export default class ProductList extends Component {
           <div className="row">
             <div className="col-12 col-md-12 col-lg-12 NavBar" id="NB1">
               <Title title="EFC" />
+              <Link to="/login">
+                <button className="btn btn-primary login-btn"><i class="fas fa-user"></i> Login</button>
+              </Link>
             </div>
             <div className="col-12 filterTab ">
               <TabFilter />
