@@ -103,7 +103,7 @@ body {
   color: #d53401;
   height: 130px;
   border: none;
-  width: 350px;
+  width: 380px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   padding: 0;
@@ -131,7 +131,7 @@ body {
   position: relative;
   display: flex;
   height: 150px;
-  width: 350px;
+  width: 380px;
   justify-content: center;
   background-color: #d53401;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -156,7 +156,7 @@ body {
   top: -12px;
   font-size: 18px;
   background-color: #fff;
-  width: 350px;
+  width: 380px;
   height: auto;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -167,12 +167,13 @@ body {
   left: 20px;
   bottom: 15px;
   font-size: 18px;
+  width: 350px;
 }
 
 .modal-container .modal-detail .add-cart-btn {
   position: relative;
-  width: 300px;
-  left: 25px;
+  width: 350px;
+  left: 15px;
   bottom: 10px;
   background-color: #d53401;
   font-size: 20px;
@@ -206,7 +207,7 @@ body {
 
 .modal-container .modal-title {
   height: 40px;
-  width: 350px;
+  width: 380px;
   background-color: #fff;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -215,7 +216,7 @@ body {
 .modal-container .modal-title .close-btn {
   position: relative;
   top: -40px;
-  left: 290px;
+  left: 330px;
   font-size: 20px;
   border: none;
 }
