@@ -32,6 +32,7 @@ export const CartItemWrapper = styled.div`
   background-color: white;
   color: black;
   border: #d53401 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .cart-item-container .cart-item-btn:hover {
