@@ -24,6 +24,7 @@
   }
 
   .login-form-container {
+    background-color: #fff;
     width: 55vw !important;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,

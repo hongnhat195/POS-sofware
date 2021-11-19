@@ -12,7 +12,7 @@ const Login = () => {
                     </div>
                     <div className="row menu-row">
                         <div className="col-12 col-md-12 col-lg-12 login-container">
-                            <LoginForm />
+                            <LoginForm className="login-form" />
                         </div>
                     </div>
                 </div>

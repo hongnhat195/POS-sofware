@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "Pos-software.mssql.somee.com",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "name": "se_dbs",
+            "database": "Pos-software",
+            "username": "nhat195_SQLLogin_1"
+        }
+    ]
+}
