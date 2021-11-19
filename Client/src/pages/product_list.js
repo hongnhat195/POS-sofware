@@ -34,13 +34,22 @@ const Page = ({ data }) => {
   return (
     <>
       <Consumer>
-        {(value) =>
-          value.products
-            .slice(pagination.start, pagination.perPage)
-            .map((product) => {
-              return <Product key={product.ID} product={product} />;
-            })
-        }
+        {(value) => {
+          if (value.isFiltered) {
+            return value.filterProducts
+              .slice(pagination.start, pagination.perPage)
+              .map((product) => {
+                return <Product key={product.ID} product={product} />;
+              })
+          }
+          else {
+            return value.products
+              .slice(pagination.start, pagination.perPage)
+              .map((product) => {
+                return <Product key={product.ID} product={product} />;
+              })
+          }
+        }}
       </Consumer>
       <div className="row">
         <div className="col-4 col-md-8 col-lg-8"></div>

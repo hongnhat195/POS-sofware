@@ -10,33 +10,43 @@ class Provider extends Component {
     cartTotal: 0,
     modalOpen: false,
     modalProduct: foodArray[0],
+    filterProducts: [],
+    isFiltered: false,
   };
 
   componentDidMount() {
-    this.setProducts();
+    axios.get(`http://localhost:5000/api/v1/item`)
+      .then((response) => {
+        const productsList = response.data;
+        this.setState(() => ({
+          products: productsList
+        }))
+        this.addElement();
+        console.log(this.state.products);
+      })
+      .catch(e => {
+        console.log(e);
+      })
   }
 
-  setProducts = () => {
-    const fetchListProduct = async () => {
-      const res = await axios.get("http://localhost:5000/api/v1/item");
-      console.log(res.data);
-      //   this.setState({
-      //     products: res.data,
-      //   });
-    };
-    fetchListProduct();
-    let tempProducts = [];
-    foodArray.forEach((item) => {
-      const it = { ...item };
-      tempProducts = [...tempProducts, it];
-    });
+  setFilterProducts = () => {
+    let tempFilterProducts = this.state.products;
     this.setState({
-      products: tempProducts,
-    });
+      filterProducts: tempFilterProducts
+    })
   };
 
+  addElement = () => {
+    let tempProducts = this.state.products;
+    tempProducts.forEach(element => {
+      element.count = 0;
+      element.total = 0
+    })
+    this.setState({ products: tempProducts });
+  }
+
   getItem = (ID) => {
-    const item = this.state.products.find((product) => product.ID === ID);
+    const item = this.state.products.find((product) => product.id === ID);
     return item;
   };
 
@@ -46,7 +56,7 @@ class Provider extends Component {
     const index = tempProducts.indexOf(this.getItem(ID));
     const product = tempProducts[index];
     product.count = product.count + 1;
-    product.total = product.count * product.price;
+    product.total = product.count * product.PRICE;
     if (tempCart.includes(product)) {
       this.setState(
         {
@@ -72,7 +82,7 @@ class Provider extends Component {
 
   increase = (ID) => {
     let tempCart = [...this.state.cart];
-    const tempProd = tempCart.find((item) => item.ID === ID);
+    const tempProd = tempCart.find((item) => item.id === ID);
     const index = tempCart.indexOf(tempProd);
     if (index === -1) {
       this.setState(() => {
@@ -81,7 +91,7 @@ class Provider extends Component {
     } else {
       const prod = tempCart[index];
       prod.count = prod.count + 1;
-      prod.total = prod.count * prod.price;
+      prod.total = prod.count * prod.PRICE;
       this.setState(
         () => {
           return {
@@ -97,7 +107,7 @@ class Provider extends Component {
 
   decrease = (ID) => {
     let tempCart = [...this.state.cart];
-    const tempProd = tempCart.find((item) => item.ID === ID);
+    const tempProd = tempCart.find((item) => item.id === ID);
     const index = tempCart.indexOf(tempProd);
     if (index === -1) {
       this.setState(() => {
@@ -111,7 +121,7 @@ class Provider extends Component {
           this.remove(ID);
         });
       }
-      prod.total = prod.count * prod.price;
+      prod.total = prod.count * prod.PRICE;
       this.setState(
         () => {
           return {
@@ -128,7 +138,7 @@ class Provider extends Component {
   remove = (ID) => {
     let tempProds = [...this.state.products];
     let tempCart = [...this.state.cart];
-    tempCart = tempCart.filter((item) => item.ID !== ID);
+    tempCart = tempCart.filter((item) => item.id !== ID);
     const index = tempProds.indexOf(this.getItem(ID));
     const delProd = tempProds[index];
     delProd.count = 0;
@@ -152,7 +162,6 @@ class Provider extends Component {
         cart: [],
       },
       () => {
-        this.setProducts();
         this.calTotal();
       }
     );
@@ -169,13 +178,14 @@ class Provider extends Component {
   };
 
   filterItem = async (typex) => {
-    await this.setProducts();
+    await this.setFilterProducts();
     console.log(this.state.products);
     const filterProduct = this.state.products.filter((item) => {
-      return item.type.findIndex((element) => element === typex) > -1;
+      return item.TYPEs[0].TYPE === typex;
     });
     this.setState({
-      products: filterProduct,
+      filterProducts: filterProduct,
+      isFiltered: true
     });
   };
 

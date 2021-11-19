@@ -10,7 +10,7 @@ export default class Modal extends React.Component {
             <Consumer>
                 {(value) => {
                     const { modalOpen, closeModal } = value;
-                    const { ID, src, name, price, type, detail, count } = value.modalProduct;
+                    const { id, NAME, DESCRIPTION, IMG, PRICE, TYPEs, count, total } = value.modalProduct;
 
                     if (!modalOpen) {
                         return null;
@@ -28,12 +28,12 @@ export default class Modal extends React.Component {
                                                 </Link>
                                             </div>
                                             <div className="modal-img-container">
-                                                <img src={src} className="img-fluid" alt="modal" />
+                                                <img src={IMG} className="img-fluid" alt="modal" />
                                             </div>
                                             <div className="modal-content d-flex">
-                                                <p><strong>{name}</strong></p>
+                                                <p><strong>{NAME}</strong></p>
                                                 <div className="d-flex justify-content-center">
-                                                    {type.map((item) => { return <p className="modal-type mx-3">{item}</p> })}
+                                                    <p className="modal-type mx-3">{TYPEs[0].TYPE}</p>
                                                 </div>
                                                 <div className="rating-box">
                                                     <Rating
@@ -43,17 +43,18 @@ export default class Modal extends React.Component {
                                                         readOnly
                                                     />
                                                 </div>
-                                                <p className="modal-price">Price: {priceWithDots(price)} VND</p>
+                                                <p className="modal-price">Price: {priceWithDots(PRICE)} VND</p>
                                             </div>
                                             <div className="modal-detail">
-                                                <p id="Detail">Detail: {detail.map(item => { return <li>{item}</li> })}</p>
+                                                <p id="Detail">Detail: </p>
+                                                <p>{DESCRIPTION}</p>
                                                 <div className="d-flex flex-row justify-content-center cart-item-btns-container">
                                                     <h5 className="mx-5">Quantity</h5>
-                                                    <button className="btn btn-primary btn-sm mx-2 cart-item-btn" onClick={() => value.decrease(ID)}><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                                    <button className="btn btn-primary btn-sm mx-2 cart-item-btn" onClick={() => value.decrease(id)}><i class="fa fa-minus" aria-hidden="true"></i></button>
                                                     <h5>{count}</h5>
-                                                    <button className="btn btn-primary btn-sm mx-2 cart-item-btn" onClick={() => value.increase(ID)}><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                                    <button className="btn btn-primary btn-sm mx-2 cart-item-btn" onClick={() => value.increase(id)}><i class="fa fa-plus" aria-hidden="true"></i></button>
                                                 </div>
-                                                <button className="btn btn-primary add-cart-btn" onClick={() => value.addToCart(ID)}><span className="fa fa-cart-plus" /> {priceWithDots(price)} VND</button>
+                                                <button className="btn btn-primary add-cart-btn" onClick={() => value.addToCart(id)}><span className="fa fa-cart-plus" /> {priceWithDots(PRICE)} VND</button>
                                             </div>
                                         </div>
                                     </div>

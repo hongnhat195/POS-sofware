@@ -6,7 +6,7 @@ export const CartContainer = styled.div`
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 390px !important;
+  width: 400px !important;
   position: absolute;
   z-index: 0;
   top: 72px;

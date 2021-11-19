@@ -40,7 +40,7 @@ body {
   height: 80px;
   position: relative;
   left: -18px;
-  max-width: 1135px !important;
+  max-width: 1165px !important;
 }
 .filterTab .MuiBox-root {
   background-color: #d53401 !important;
@@ -205,7 +205,7 @@ body {
 }
 
 .modal-container .modal-title {
-  height: 50px;
+  height: 40px;
   width: 350px;
   background-color: #fff;
   border-top-left-radius: 20px;
@@ -222,7 +222,6 @@ body {
 
 .modal-container .modal-title h3 {
   position: relative;
-  top: 10px;
   left: 10px;
 }
 /*===========*/
