@@ -159,10 +159,11 @@ class Provider extends Component {
   clearCart = () => {
     this.setState(
       {
-        cart: [],
+        cart: []
       },
       () => {
         this.calTotal();
+        this.addElement();
       }
     );
   };
