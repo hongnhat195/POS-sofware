@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductList from "./pages/product_list";
+import Payment from "./pages/payment";
 import { Provider } from "./components/products/content";
 import Modal from "./components/modal/modal";
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -9,11 +10,12 @@ function App() {
   return (
     <React.Fragment>
       <Provider>
-          <Switch>
-            <Route path="/" exact component={ProductList} />
-            <Route path="/product_list" exact component={ProductList} />
-          </Switch>
-        <Modal/>
+        <Switch>
+          <Route path="/" exact component={ProductList} />
+          <Route path="/product_list" exact component={ProductList} />
+          <Route path="/payment" exact component={Payment} />
+        </Switch>
+        <Modal />
       </Provider>
     </React.Fragment>
   );

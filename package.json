@@ -16,6 +16,9 @@
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@mui/material": "^5.1.1",
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.21.1",
+    "cleave.js": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mssql": "^7.2.1",

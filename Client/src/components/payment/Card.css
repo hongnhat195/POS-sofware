@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+#form {
+  background: #fff;
+  max-width: 500px;
+  max-height: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  position: relative;
+  left: 300px;
+  top: 30px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+}
+
+#form img {
+  display: inline-block;
+  width: 80px;
+  height: 50px;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+#form input,
+#form select {
+  margin: 1rem 0;
+  padding: 0.75rem 0.25rem;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  width: 100%;
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+}
+
+#form h4 {
+  color: #555;
+  font-size: 0.9rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+}
+
+.mt {
+  margin-top: 8rem;
+}
+
+#form .input-container {
+  position: relative;
+  font-size: 1rem;
+  color: #333;
+  top: -100px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+}
+
+#form .input-grp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+}
+
+#form button {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  margin-top: 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  background-color: #d53401;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 9;
+  font-weight: 700;
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+  position: relative;
+  bottom: 60px;
+}
+
+#form button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #f47a00;
+  z-index: -1;
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+}
+
+#form button:hover:before {
+  width: 100%;
+  transition: 0.2s all;
+}
+
+#form .card-price {
+  position: relative;
+  bottom: 50px;
+  text-align: right;
+  color: #d53401 !important;
+}
+
+#form .card-price h5 {
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#form .card-price p {
+  font-family: "Roboto", Arial, Helvetica, sans-serif !important;
+  font-size: 20px;
+}
+
+#form .card-content {
+  position: relative;
+  top: 30px;
+}

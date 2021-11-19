@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Title from "../components/title/title";
-import { foodArray } from "../mcdonalds";
 import { Consumer } from "../components/products/content";
 import Product from "../components/products/product";
 import {
@@ -10,7 +9,6 @@ import {
 import "../ProductStyle/ProductListStyle.css";
 import Cart from "../components/cart/cart";
 import TabFilter from "../components/title/tabFilter";
-import { Button, Offcanvas } from "react-bootstrap";
 
 const { useContext, useEffect } = React;
 
@@ -114,7 +112,14 @@ export default class ProductList extends Component {
                 <div className="row">
                   <PaginationProvider>
                     <Consumer>
-                      {(value) => <Page data={value.products} />}
+                      {(value) => {
+                        if (!value.isFiltered) {
+                          return <Page data={value.products} />
+                        }
+                        else {
+                          return <Page data={value.filterProducts} />
+                        }
+                      }}
                     </Consumer>
                   </PaginationProvider>
                 </div>
