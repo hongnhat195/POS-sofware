@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api/v1", rootRouter);
-app.listen(5000, async () => {
+app.listen(process.env.PORT || 5000, async () => {
   console.log("App listening on http://localhost:5000");
   try {
     await sequelize.authenticate();
