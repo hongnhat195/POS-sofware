@@ -6,7 +6,7 @@ export const CartContainer = styled.div`
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 390px !important;
+  width: 400px !important;
   position: absolute;
   z-index: 0;
   top: 72px;
@@ -42,6 +42,7 @@ export const CartContainer = styled.div`
   border: #d53401 1px solid;
   position: relative;
   right: -285px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .cart .total-container .clear-btn:hover {
@@ -57,6 +58,7 @@ export const CartContainer = styled.div`
   background-color: #d53401 !important;
   font-size: 20px;
   border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .cart .payment-btn:hover {

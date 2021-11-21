@@ -2,12 +2,13 @@ import React from "react";
 import { Consumer } from "../products/content";
 import CartItem from "./cartItem";
 import { CartContainer } from "../../container/CartContainer";
+import { Link } from "react-router-dom";
 import priceWithDots from "../products/priceWithDots";
 
 export default function Cart() {
-        return (
-            <CartContainer>
-                <div className="container cart">
+    return (
+        <CartContainer>
+            <div className="container cart">
                 <Consumer>
                     {value => {
                         const { cart } = value;
@@ -16,18 +17,20 @@ export default function Cart() {
                                 <React.Fragment>
                                     <div className="row cart-row">
                                         <div className="col-sm-12 col-md-12 col-lg-12 cart-col">
-                                        <p className="cart-title"><i class="fas fa-shopping-cart"></i> Your cart</p>     
-                                    {value.cart.map(product => { return <CartItem key={product.ID} product={product} /> })}
+                                            <p className="cart-title"><i class="fas fa-shopping-cart"></i> Your cart</p>
+                                            {value.cart.map(product => { return <CartItem key={product.ID} product={product} /> })}
+                                        </div>
                                     </div>
-                                </div>
                                     <div className="total-container">
-                                            <div className="d-flex justify-content-between">
-                                                <p className="text-left p1">Total: </p>
-                                                <p className="text-right p2"><strong>{priceWithDots(value.cartTotal)} VND</strong></p>
-                                            </div>
+                                        <div className="d-flex justify-content-between">
+                                            <p className="text-left p1">Total: </p>
+                                            <p className="text-right p2"><strong>{priceWithDots(value.cartTotal)} VND</strong></p>
+                                        </div>
                                         <button className="btn btn-primary btn-md clear-btn" onClick={() => value.clearCart()}>Clear</button>
                                     </div>
-                                    <button className="btn btn-primary btn-lg payment-btn">Payment</button>
+                                    <Link to="/payment">
+                                        <button className="btn btn-primary btn-lg payment-btn">Payment</button>
+                                    </Link>
                                 </React.Fragment>
                             )
                         }
@@ -37,8 +40,8 @@ export default function Cart() {
                             )
                         }
                     }}
-                    </Consumer>
-                </div>
-            </CartContainer>
-        )
+                </Consumer>
+            </div>
+        </CartContainer>
+    )
 }

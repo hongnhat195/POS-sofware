@@ -12,8 +12,7 @@ export const ProductWrapper = styled.div`
   display: flex;
   height: 200px;
   justify-content: center;
-  background-color: #d53401
-;
+  background-color: #d53401;
 }
 .food-card .food-card_img img {
   display: block;
@@ -95,6 +94,7 @@ export const ProductWrapper = styled.div`
   background-color: #d53401;
   color: white;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .food-card .food-card_content .food-card_bottom-section .food-card_order-count .cart-btn:hover {
   background-color: #f47a00;

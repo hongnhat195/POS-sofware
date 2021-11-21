@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Title from "../components/title/title";
-import { foodArray } from "../mcdonalds";
 import { Consumer } from "../components/products/content";
 import Product from "../components/products/product";
 import {
@@ -10,7 +9,7 @@ import {
 import "../ProductStyle/ProductListStyle.css";
 import Cart from "../components/cart/cart";
 import TabFilter from "../components/title/tabFilter";
-import { Button, Offcanvas } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const { useContext, useEffect } = React;
 
@@ -34,13 +33,22 @@ const Page = ({ data }) => {
   return (
     <>
       <Consumer>
-        {(value) =>
-          value.products
-            .slice(pagination.start, pagination.perPage)
-            .map((product) => {
-              return <Product key={product.ID} product={product} />;
-            })
-        }
+        {(value) => {
+          if (value.isFiltered) {
+            return value.filterProducts
+              .slice(pagination.start, pagination.perPage)
+              .map((product) => {
+                return <Product key={product.ID} product={product} />;
+              })
+          }
+          else {
+            return value.products
+              .slice(pagination.start, pagination.perPage)
+              .map((product) => {
+                return <Product key={product.ID} product={product} />;
+              })
+          }
+        }}
       </Consumer>
       <div className="row">
         <div className="col-4 col-md-8 col-lg-8"></div>
@@ -96,6 +104,9 @@ export default class ProductList extends Component {
           <div className="row">
             <div className="col-12 col-md-12 col-lg-12 NavBar" id="NB1">
               <Title title="EFC" />
+              <Link to="/login">
+                <button className="btn btn-primary login-btn"><i class="fas fa-user"></i> Login</button>
+              </Link>
             </div>
             <div className="col-12 filterTab ">
               <TabFilter />
@@ -105,7 +116,14 @@ export default class ProductList extends Component {
                 <div className="row">
                   <PaginationProvider>
                     <Consumer>
-                      {(value) => <Page data={value.products} />}
+                      {(value) => {
+                        if (!value.isFiltered) {
+                          return <Page data={value.products} />
+                        }
+                        else {
+                          return <Page data={value.filterProducts} />
+                        }
+                      }}
                     </Consumer>
                   </PaginationProvider>
                 </div>

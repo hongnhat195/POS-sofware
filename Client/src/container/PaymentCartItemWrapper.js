@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CartItemWrapper = styled.div`
+export const PaymentCartItemWrapper = styled.div`
     .cart-item-container {
   border-radius: 15px;
   background-color: white;
@@ -21,24 +21,6 @@ export const CartItemWrapper = styled.div`
   width: 100%;
 }
 
-.cart-item-container .cart-item-btns-container {
-  position: relative;
-  bottom: 50px;
-  left: -40px;
-  height: 30px;
-}
-
-.cart-item-container .cart-item-btn {
-  background-color: white;
-  color: black;
-  border: #d53401 1px solid;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
-.cart-item-container .cart-item-btn:hover {
-  background-color: #d53401;
-}
-
 .cart-item-container .cart-item-img-container {
   background-color: #d53401;
 }
@@ -51,6 +33,12 @@ export const CartItemWrapper = styled.div`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.cart-item-container .cart-item-content h5{
+    position: relative;
+    bottom: 50px;
+    left: -65px;
 }
 
 .cart-item-container .cart-item-price {
