@@ -6,7 +6,7 @@ import axios from "axios";
 import PropTypes from 'prop-types';
 import "./login.css";
 
-function loginUser({ user }) {
+function loginUser(user) {
     console.log(user);
     return axios.post('http://localhost:5000/api/v1/cus/', { user })
         .then(data => {
