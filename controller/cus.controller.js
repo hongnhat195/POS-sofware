@@ -2,6 +2,7 @@ import { CUSTOMER, ORDERS, ORDER_ITEM, PAYMENT, ITEM } from "../models";
 
 const login = async (req, res) => {
   const { username, password } = req.body;
+  console.log(username, password);
   try {
     const user = await CUSTOMER.findOne({
       where: {
@@ -37,7 +38,7 @@ const payment = async (req, res) => {
       METHOD: "CARD",
       TIME: "",
     });
-  } catch (error) {}
+  } catch (error) { }
 };
 const check = async (req, res) => {
   try {
@@ -62,6 +63,6 @@ const check = async (req, res) => {
         },
       ],
     });
-  } catch (error) {}
+  } catch (error) { }
 };
 export { payment, login, check };

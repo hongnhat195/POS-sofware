@@ -1,19 +1,41 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import axios from "axios";
+import PropTypes from 'prop-types';
 import "./login.css";
 
-export default function LoginForm() {
-    const [email, setEmail] = useState("");
+function loginUser({ user }) {
+    console.log(user);
+    return axios.post('http://localhost:5000/api/v1/cus/', { user })
+        .then(data => {
+            if (data !== null) {
+                console.log(data);
+                return data.data;
+            } else {
+                console.log("Login Failed");
+            }
+        }).catch(error => { console.log(error); });
+}
+
+export default function LoginForm({ setToken }) {
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    function validateForm() {
-        return email.length > 0 && password.length > 0;
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const user = {
+            username: username,
+            password: password
+        }
+        const token = await loginUser(user);
+        setToken(token);
+        console.log(token);
     }
 
-    function handleSubmit(event) {
-        event.preventDefault();
+    function validateForm() {
+        return username.length > 0 && password.length > 0;
     }
 
     return (
@@ -22,15 +44,15 @@ export default function LoginForm() {
                 <div className="col-12 col-md-12 col-lg-6">
                     <div className="Login">
                         <h1 className="text-center" style={{ color: "red", fontFamily: "Roboto", fontWeight: 700 }}>Login</h1>
-                        <Form onSubmit={handleSubmit}>
+                        <Form onSubmit={handleSubmit} action="#">
                             <Form.Group size="lg" controlId="email" className="my-1">
-                                <Form.Label style={{ fontFamily: "Roboto", fontWeight: 600 }}>Email</Form.Label>
+                                <Form.Label style={{ fontFamily: "Roboto", fontWeight: 600 }}>Username</Form.Label>
                                 <Form.Control
                                     autoFocus
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Please enter your email"
+                                    type="text"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    placeholder="Please enter your username"
                                     style={{ fontFamily: "Roboto", borderRadius: 20, }}
                                 />
                             </Form.Group>
@@ -44,11 +66,9 @@ export default function LoginForm() {
                                     style={{ fontFamily: "Roboto", borderRadius: 20, }}
                                 />
                             </Form.Group>
-                            <Link to="/">
-                                <Button block size="lg" type="submit" disabled={!validateForm()} id="btn">
-                                    Login
-                                </Button>
-                            </Link>
+                            <Button block size="lg" type="submit" disabled={!validateForm()} id="btn">
+                                Login
+                            </Button>
                         </Form>
                     </div>
                 </div>
@@ -58,4 +78,8 @@ export default function LoginForm() {
             </div>
         </div>
     );
+}
+
+LoginForm.propTypes = {
+    setToken: PropTypes.func.isRequired
 }
