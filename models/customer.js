@@ -25,10 +25,17 @@ module.exports = (sequelize, DataTypes) => {
       EMAIL: DataTypes.STRING,
       PHONE: DataTypes.STRING,
       ADDRESS: DataTypes.STRING,
+      ID: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
     },
+
     {
       sequelize,
       modelName: "CUSTOMER",
+      timestamps: false,
     }
   );
   return CUSTOMER;

@@ -1,15 +1,15 @@
 import { CUSTOMER, ORDERS, ORDER_ITEM, PAYMENT, ITEM } from "../models";
-
+import { Op } from "sequelize";
 const login = async (req, res) => {
   const { username, password } = req.body;
   console.log(username, password);
   try {
-    const user = await CUSTOMER.findOne({
+    const user = await CUSTOMER.findAll({
       where: {
-        username: username,
-        password: password,
+        [Op.and]: [{ USERNAME: username }, { PASSWORD: password }],
       },
     });
+    console.log(user);
     res.status(200).send(user);
   } catch (error) {
     res.status(500).send(error.message);
@@ -38,7 +38,7 @@ const payment = async (req, res) => {
       METHOD: "CARD",
       TIME: "",
     });
-  } catch (error) { }
+  } catch (error) {}
 };
 const check = async (req, res) => {
   try {
@@ -63,6 +63,6 @@ const check = async (req, res) => {
         },
       ],
     });
-  } catch (error) { }
+  } catch (error) {}
 };
 export { payment, login, check };
