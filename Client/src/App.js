@@ -6,17 +6,9 @@ import { Provider } from "./components/products/content";
 import Modal from "./components/modal/modal";
 import Login from "./pages/login";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LoginForm from "./components/login/login-form";
-import React, { useState } from 'react';
+import React from 'react';
 
 function App() {
-  const [token, setToken] = useState();
-
-  if (!token) {
-    console.log(token);
-    return <LoginForm setToken={setToken} />
-  }
-
   return (
     <React.Fragment>
       <Provider>

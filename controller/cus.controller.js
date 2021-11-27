@@ -38,7 +38,7 @@ const payment = async (req, res) => {
       METHOD: "CARD",
       TIME: "",
     });
-  } catch (error) {}
+  } catch (error) { }
 };
 const check = async (req, res) => {
   try {
@@ -63,6 +63,6 @@ const check = async (req, res) => {
         },
       ],
     });
-  } catch (error) {}
+  } catch (error) { }
 };
 export { payment, login, check };

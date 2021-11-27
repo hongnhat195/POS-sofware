@@ -11,11 +11,12 @@ function loginUser(user) {
   return axios
     .post("http://localhost:5000/api/v1/cus", user)
     .then((data) => {
-      if (data !== null) {
+      if (data.data.length > 0) {
         console.log(data);
         return data.data;
       } else {
         console.log("Login Failed");
+        alert("Vui lòng nhập đúng tài khoản và mật khẩu");
       }
     })
     .catch((error) => {
