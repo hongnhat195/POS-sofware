@@ -8,7 +8,7 @@ const ClearToken = () => {
 export default function Title({ title }) {
     const token = localStorage.getItem('token');
 
-    if (window.location.pathname !== '/login' && !token) {
+    if (window.location.pathname !== '/login' && window.location.pathname !== '/payment' && !token) {
         return (
             <div className="row">
                 <div className="col-12 mx-auto my-2">
@@ -21,7 +21,7 @@ export default function Title({ title }) {
                 </div>
             </div>
         )
-    } else if (window.location.pathname !== '/login' && token) {
+    } else if (window.location.pathname !== '/login' && window.location.pathname !== '/payment' && token) {
         return (
             <div className="row">
                 <div className="col-12 mx-auto my-2">
